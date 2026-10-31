@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0c1020" />
+    <title>Genel Sohbet</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main class="layout">
+      <section id="joinView" class="join-card" aria-labelledby="joinTitle">
+        <div class="logo" aria-hidden="true">#</div>
+        <span class="eyebrow">HOŞ GELDİN</span>
+        <h1 id="joinTitle">Genel Sohbet</h1>
+        <p class="intro">Herkesle konuşmak için bir takma ad seç. Hesap açmana gerek yok.</p>
+        <form id="joinForm" class="join-form">
+          <label for="nicknameInput">Takma adın</label>
+          <input id="nicknameInput" name="nickname" type="text" maxlength="24" minlength="1" autocomplete="nickname" placeholder="Örn. Skywalker" required autofocus />
+          <button class="primary-button" type="submit">Sohbete katıl <span aria-hidden="true">→</span></button>
+        </form>
+        <p class="hint">Takma adın ve yazdıkların diğer ziyaretçiler tarafından görülebilir.</p>
+      </section>
+
+      <section id="chatView" class="chat-card hidden" aria-label="Genel sohbet odası">
+        <header class="chat-header">
+          <div class="header-icon" aria-hidden="true">#</div>
+          <div class="header-main">
+            <h1>Genel Sohbet</h1>
+            <p><span class="online-dot" aria-hidden="true"></span> <span id="onlineCount">Bağlanıyor...</span></p>
+          </div>
+          <button type="button" id="changeName" class="outline-button" title="Takma adını değiştir">İsim değiştir</button>
+        </header>
+
+        <div id="messages" class="messages" role="log" aria-live="polite" aria-relevant="additions"></div>
+
+        <form id="messageForm" class="composer">
+          <div class="identity">Sen: <strong id="activeNickname"></strong></div>
+          <div class="send-row">
+            <input id="messageInput" type="text" maxlength="500" placeholder="Bir mesaj yaz..." autocomplete="off" aria-label="Mesajın" required />
+            <button type="submit" id="sendButton" class="primary-button">Gönder</button>
+          </div>
+          <p id="status" class="status" role="status"></p>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
