@@ -1,0 +1,12 @@
+{
+  "name": "genel-sohbet",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Takma adla girilen, gercek zamanli genel sohbet sitesi",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
